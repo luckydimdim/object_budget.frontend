@@ -18,6 +18,12 @@ dependencies:
     alert:
         #git: https://github.com/luckydimdim/alert.frontend.git
         git: http://cm-ylng-msk-04/git/alert.frontend.git
+    grid:
+        #git: https://github.com/luckydimdim/grid.frontend.git
+        git: http://cm-ylng-msk-04/git/grid.frontend.git
+    resources_loader:
+        #git: https://github.com/luckydimdim/resources_loader.frontend.git
+        git: http://cm-ylng-msk-04/git/resources_loader.frontend.git
 dev_dependencies:
     test: ^0.12.18                        # A library for writing dart unit tests. https://pub.dartlang.org/packages/test
     yaml: ^2.1.12                         # A parser for YAML. https://pub.dartlang.org/packages/yaml

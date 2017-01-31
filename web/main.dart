@@ -10,6 +10,7 @@ import 'package:angular2/platform/common.dart';
 import 'package:alert/alert_service.dart';
 
 import 'package:object_budget/object_budget_component.dart';
+import 'package:resources_loader/resources_loader.dart';
 
 bool get isDebug =>
     (const String.fromEnvironment('PRODUCTION', defaultValue: 'false')) !=
@@ -23,7 +24,8 @@ main() async {
   ComponentRef ref = await bootstrap(ObjectBudgetComponent, [
     ROUTER_PROVIDERS,
     const Provider(LocationStrategy, useClass: HashLocationStrategy),
-    const Provider(AlertService)
+    const Provider(AlertService),
+    const Provider(ResourcesLoaderService)
   ]);
 
   if (isDebug) {
