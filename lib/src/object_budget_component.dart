@@ -38,7 +38,7 @@ class ObjectBudgetComponent
 
     breadcrumbContent.innerHtml = '''
             <li class="breadcrumb-item"><a href="#/master/dashboard">Главная</a></li>
-            <li class="breadcrumb-item"><a href="#master/objectBudgetList">Список бюджетов по объектам строительства</a></li>
+            <li class="breadcrumb-item"><a href="#/master/objectBudgetList">Список бюджетов по объектам строительства</a></li>
             <li class="breadcrumb-item active">Бюджет по объекту</li>
     ''';
   }
