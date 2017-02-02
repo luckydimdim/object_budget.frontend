@@ -1,9 +1,8 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 import 'dart:async';
-
+import 'dart:html';
 import 'package:alert/alert_service.dart';
-import 'package:js/js.dart';
 
 import 'package:resources_loader/resources_loader.dart';
 
@@ -30,8 +29,24 @@ class ObjectBudgetComponent
 
   ObjectBudgetComponent(this._router, this._alertService, this._resourcesLoaderService) {}
 
+  // import 'dart:html';
+  void breadcrumbInit(){
+    var  breadcrumbContent = querySelector('#breadcrumbContent') as DivElement;
+
+    if (breadcrumbContent == null)
+      return;
+
+    breadcrumbContent.innerHtml = '''
+            <li class="breadcrumb-item"><a href="#/master/dashboard">Главная</a></li>
+            <li class="breadcrumb-item"><a href="#master/objectBudgetList">Список бюджетов по объектам строительства</a></li>
+            <li class="breadcrumb-item active">Бюджет по объекту</li>
+    ''';
+  }
+
   @override
   void ngOnInit() {
+    breadcrumbInit();
+
     showGrid(
         "#grid", 'packages/object_budget/src/months_budget.json');
   }
