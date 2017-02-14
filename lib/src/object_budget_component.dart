@@ -9,15 +9,14 @@ import 'package:resources_loader/resources_loader.dart';
 import 'package:grid/JsObjectConverter.dart';
 import 'package:grid/jq_grid.dart';
 
-
 @Component(selector: 'object-budget')
 @View(
     templateUrl: 'object_budget_component.html',
     directives: const [RouterLink])
 class ObjectBudgetComponent
     implements OnInit, OnDestroy {
-  static const String route_name = "ObjectBudget";
-  static const String route_path = "object-budget";
+  static const String route_name = 'ObjectBudget';
+  static const String route_path = 'object-budget';
   static const Route route = const Route(
       path: ObjectBudgetComponent.route_path,
       component: ObjectBudgetComponent,
@@ -29,7 +28,6 @@ class ObjectBudgetComponent
 
   ObjectBudgetComponent(this._router, this._alertService, this._resourcesLoaderService) {}
 
-  // import 'dart:html';
   void breadcrumbInit(){
     var  breadcrumbContent = querySelector('#breadcrumbContent') as DivElement;
 
@@ -47,8 +45,7 @@ class ObjectBudgetComponent
   void ngOnInit() {
     breadcrumbInit();
 
-    showGrid(
-        "#grid", 'packages/object_budget/src/months_budget.json');
+    showGrid("#grid", 'packages/object_budget/src/months_budget.json');
   }
 
   @override

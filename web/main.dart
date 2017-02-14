@@ -8,20 +8,27 @@ import 'package:angular2/src/platform/browser/location/hash_location_strategy.da
 import 'package:angular2/platform/common.dart';
 
 import 'package:alert/alert_service.dart';
+import 'package:resources_loader/resources_loader.dart';
+import 'package:master_layout/master_layout_component.dart';
 
 import 'package:object_budget/object_budget_component.dart';
-import 'package:resources_loader/resources_loader.dart';
 
 bool get isDebug =>
     (const String.fromEnvironment('PRODUCTION', defaultValue: 'false')) !=
     'true';
+
+@Component(selector: 'app')
+@View(
+  template: '<master-layout><object-budget></object-budget></master-layout>',
+  directives: const [MasterLayoutComponent, ObjectBudgetComponent])
+class AppComponent {}
 
 main() async {
   if (isDebug) {
     reflector.trackUsage();
   }
 
-  ComponentRef ref = await bootstrap(ObjectBudgetComponent, [
+  ComponentRef ref = await bootstrap(AppComponent, [
     ROUTER_PROVIDERS,
     const Provider(LocationStrategy, useClass: HashLocationStrategy),
     const Provider(AlertService),
