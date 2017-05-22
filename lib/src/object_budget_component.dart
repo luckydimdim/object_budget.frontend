@@ -1,14 +1,11 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
-import 'package:alert/alert_service.dart';
 
-import 'package:resources_loader/resources_loader.dart';
-@Component(selector: 'object-budget')
-@View(
+@Component(
+    selector: 'object-budget',
     templateUrl: 'object_budget_component.html',
     directives: const [RouterLink])
-class ObjectBudgetComponent
-    implements OnInit, OnDestroy {
+class ObjectBudgetComponent implements OnInit, OnDestroy {
   static const String route_name = 'ObjectBudget';
   static const String route_path = 'object-budget';
   static const Route route = const Route(
@@ -16,15 +13,9 @@ class ObjectBudgetComponent
       component: ObjectBudgetComponent,
       name: ObjectBudgetComponent.route_name);
 
-  final Router _router;
-  final AlertService _alertService;
-  final ResourcesLoaderService _resourcesLoaderService;
+  ObjectBudgetComponent();
 
-  ObjectBudgetComponent(this._router, this._alertService, this._resourcesLoaderService) {}
-
-  void breadcrumbInit(){
-
-  }
+  void breadcrumbInit() {}
 
   @override
   void ngOnInit() {
